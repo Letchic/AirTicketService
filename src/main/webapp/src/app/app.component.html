@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <header>
+    <h1 align="center">Поиск авиабилетов</h1>
+  </header>
+  <div class="search">
+    <form name="search" action="#" method="get">
+      <input list="linput" id="input1"   type="text" placeholder = "Откуда:"  [(ngModel)]= "startingpoint" name="startingpoint" />
+      <input list="linput" id="input2" type="text" placeholder = "Куда:" [(ngModel)]= "destination" name="destination"/>
+      <input id="input3" type="date" placeholder = "Дата вылета:" [(ngModel)]= "departuretime" name="departuretime"/>
+      <select id="tclass" type="text" [(ngModel)]= "tclass" name="tclass">
+        <option class="option" value="econom">Эконом</option>
+        <option class="option" value="business">Бизнес</option>
+      </select>
+
+      <button id="find" (click)="find(startingpoint, destination, departuretime, tclass)" type="submit"> Найти </button>
+      <button id="findall" (click)="findAll()" type="submit"> Найти все  рейсы</button>
+
+      <datalist id="linput">
+        <option>Moscow</option>
+        <option>Saint-Petersburg</option>
+        <option>Nizhny Novgorod</option>
+        <option>Rome</option>
+        <option>Berlin</option>
+        <option>Tokyo</option>
+      </datalist>
+    </form>
+  </div>
+  <div class="resultblock">
+    <app-flight [flights]="flights"></app-flight>
+  </div>
+</div>
+
