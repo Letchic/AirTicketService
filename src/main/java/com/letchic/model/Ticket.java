@@ -1,4 +1,4 @@
-package com.letchic.entity;
+package com.letchic.model;
 
 import javax.persistence.*;
 

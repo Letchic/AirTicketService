@@ -1,7 +1,8 @@
-package com.letchic.entity;
+package com.letchic.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Table(name = "flight")
@@ -11,17 +12,13 @@ public class Flight {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long flightid;
 
-
     private Timestamp departuretime;
-
-
     private String startingpoint;
     private String destination;
     private String company;
     private String arrivaltime;
     private double luggageprice;
     private String gate;
-
     public Flight() {
     }
 
@@ -35,26 +32,12 @@ public class Flight {
         this.gate = gate;
     }
 
-    @Override
-    public String toString() {
-        return "Flight{" +
-                "flightid=" + flightid +
-                ", departuretime=" + departuretime +
-                ", startingpoint='" + startingpoint + '\'' +
-                ", destination='" + destination + '\'' +
-                ", company='" + company + '\'' +
-                ", arrivaltime='" + arrivaltime + '\'' +
-                ", luggageprice=" + luggageprice +
-                ", gate='" + gate + '\'' +
-                '}';
-    }
-
     public long getFlightid() {
         return flightid;
     }
 
-    public void setFlightid(long flight_id) {
-        this.flightid = flight_id;
+    public void setFlightid(long flightid) {
+        this.flightid = flightid;
     }
 
     public Timestamp getDeparturetime() {
@@ -111,5 +94,19 @@ public class Flight {
 
     public void setGate(String gate) {
         this.gate = gate;
+    }
+
+    @Override
+    public String toString() {
+        return "Flight{" +
+                "flightid=" + flightid +
+                ", departuretime=" + departuretime +
+                ", startingpoint='" + startingpoint + '\'' +
+                ", destination='" + destination + '\'' +
+                ", company='" + company + '\'' +
+                ", arrivaltime='" + arrivaltime + '\'' +
+                ", luggageprice=" + luggageprice +
+                ", gate='" + gate + '\'' +
+                '}';
     }
 }

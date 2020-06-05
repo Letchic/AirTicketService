@@ -1,6 +1,6 @@
 package com.letchic.repository;
 
-import com.letchic.entity.Flight;
+import com.letchic.model.Flight;
 import com.letchic.views.FlightView;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

@@ -1,7 +1,7 @@
 package com.letchic.controller;
 
 
-import com.letchic.entity.User;
+import com.letchic.model.User;
 import com.letchic.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

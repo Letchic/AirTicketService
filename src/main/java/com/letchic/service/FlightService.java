@@ -1,6 +1,6 @@
 package com.letchic.service;
 
-import com.letchic.entity.Flight;
+import com.letchic.model.Flight;
 import com.letchic.repository.FlightRepository;
 
 import com.letchic.views.FlightView;
@@ -21,7 +21,9 @@ public class FlightService {
     }
 
    public List<FlightView> findByDeparturetimeAndPoints(Date date, String spoint, String epoint, String travelclass){
+
         return flightRepository.findByDeparturetimeAndPoints(date,spoint,epoint,travelclass);
+
     }
 
 }

@@ -1,4 +1,4 @@
-package com.letchic.entity;
+package com.letchic.model;
 
 import javax.persistence.*;
 
@@ -11,8 +11,8 @@ public class TravelClass {
 
     private String travelclass;
 
-    @ManyToOne
-    private Flight flight;
+   // @ManyToOne
+    // private Flight flight;
     private int emptyseats;
     private double price;
 
@@ -22,7 +22,7 @@ public class TravelClass {
 
     public TravelClass(String travelclass, Flight flight, int emptyseats, double price) {
         this.travelclass = travelclass;
-        this.flight = flight;
+       // this.flight = flight;
         this.emptyseats = emptyseats;
         this.price = price;
     }
@@ -43,13 +43,13 @@ public class TravelClass {
         this.travelclass = travelclass;
     }
 
-    public Flight getFlight() {
+  /*  public Flight getFlight() {
         return flight;
     }
 
     public void setFlight(Flight flight) {
         this.flight = flight;
-    }
+    }*/
 
     public int getEmptyseats() {
         return emptyseats;
