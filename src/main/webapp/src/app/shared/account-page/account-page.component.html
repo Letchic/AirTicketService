@@ -1,0 +1,97 @@
+<app-menu></app-menu>
+<div class="wrapper">
+<div class = "personal">
+  <div class = "head">Ваши данные:</div>
+  <table>
+    <tr>
+      <td class = "properties">Фамилия:</td>
+      <td class = "values">{{globals.currentUser.lastname}}</td>
+    </tr>
+    <tr>
+      <td>Имя:</td>
+      <td>{{globals.currentUser.firstname}}</td>
+    </tr>
+    <tr>
+      <td>Отчество:</td>
+      <td>{{globals.currentUser.middlename}}</td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td>{{globals.currentUser.email}}</td>
+    </tr>
+    <tr>
+      <td>Пол:</td>
+      <td>{{globals.currentUser.gender}}</td>
+    </tr>
+    <tr>
+      <td>Национальность:</td>
+      <td>{{globals.currentUser.nationality}}</td>
+    </tr>
+    <tr>
+      <td>Место рождения:</td>
+      <td>{{globals.currentUser.placeofbirth}}</td>
+    </tr>
+    <tr>
+      <td>Дата рождения:</td>
+      <td>{{globals.currentUser.dateofbirth}}</td>
+    </tr>
+    <tr>
+      <td>Телефон:</td>
+      <td>{{globals.currentUser.phone}}</td>
+    </tr>
+    <tr>
+      <td>Номер паспорта:</td>
+      <td>{{globals.currentUser.passport}}</td>
+    </tr>
+  </table>
+
+  <div *ngIf="tickets.length>0"><div class="head2">Билеты:</div></div>
+
+  <div class='ticketresult'  *ngFor = "let ticket of tickets; let i = index">
+    <div>
+      <table class="point">
+        <tr>
+          <td class="timefrom"> {{ticket.onlytime}}  <img src="assets/takeoff.png" alt=""></td>
+          <td class="time">В пути: {{ticket.time}}</td>
+          <td class="timeto"><img src="assets/landing.png" alt=""> {{ticket.onlytime2}} </td>
+        </tr>
+        <tr class="tr2">
+          <td class="from">{{ticket.airport1city}} ({{ticket.startingpoint}})</td>
+          <td class="middle">  {{ticket.company}}  </td>
+          <td class="to">{{ticket.airport2city}} ({{ticket.destination}})</td>
+        </tr>
+        <tr class="tr3">
+          <td class="datefrom">{{ticket.onlydate}}</td>
+          <td></td>
+          <td class="dateto"> {{ticket.onlydate2}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class = "details">
+      <div>Номер рейса: {{ticket.flightid}}</div>
+      <div>Номер билета: {{ticket.ticket_id}}</div>
+      <div>
+        <div *ngIf="ticket.travelclass=='econom'; then econom else business"></div>
+        <ng-template #econom>
+          <div>
+            Эконом класс
+          </div>
+        </ng-template>
+        <ng-template #business>
+          <div>
+            Бизнес класс
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <div class = "buttons">
+      <button (click) = "cancel(i)" routerLink="/app-return">Вернуть билет</button>
+      <button (click) = "sendtoemail(i)">Отправить на почту</button>
+    </div>
+  </div>
+</div>
+</div>
+<div class="basement">
+  <app-footer></app-footer>
+</div>

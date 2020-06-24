@@ -1,0 +1,22 @@
+<div class="menu">
+  <button  class = 'main' routerLink="" type=submit>Главная</button>
+
+  <div *ngIf="globals.currentUser?.firstname; then thenBlock else elseBlock" ></div>
+  <ng-template #thenBlock>
+    <button  class="rightside" routerLink="" (click)="removeuser()" type=submit>
+        Выйти
+    </button>
+    <button  class="rightside" routerLink="/account-page"  type=submit>
+     {{globals.currentUser.firstname}} {{globals.currentUser.lastname}}
+    </button>
+  </ng-template>
+  <ng-template #elseBlock>
+    <button  class="rightside" routerLink="/register-page" type=submit>
+    Регистрация
+    </button>
+    <button class="rightside" routerLink="/login-page" type=submit>
+      Войти
+    </button>
+  </ng-template>
+
+</div>

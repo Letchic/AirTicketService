@@ -1,0 +1,141 @@
+<div class="wrapper">
+  <app-menu></app-menu>
+  <div class="mainblock">
+    <div class="data">
+      <div class="head">
+        Бронирование билета
+      </div>
+      <div class="details">
+        Детали полета
+      </div>
+      <div>
+        <table class="point">
+          <tr>
+            <td class="timefrom"> {{currentFlight.onlytime}}  <img src="assets/takeoff.png" alt=""></td>
+            <td class="time">В пути: {{currentFlight.time}}</td>
+            <td class="timeto"><img src="assets/landing.png" alt=""> {{currentFlight.onlytime2}} </td>
+          </tr>
+          <tr class="tr2">
+            <td class="from">{{currentFlight.airport1city}} ({{currentFlight.startingpoint}})</td>
+            <td class="middle">  {{currentFlight.company}}  </td>
+            <td class="to">{{currentFlight.airport2city}} ({{currentFlight.destination}})</td>
+          </tr>
+
+          <tr class="tr3">
+            <td class="datefrom">{{currentFlight.onlydate}}</td>
+            <td></td>
+            <td class="dateto"> {{currentFlight.onlydate2}}</td>
+          </tr>
+        </table>
+      </div>
+      <table class="tab">
+        <tr>
+          <td>
+            <div class="moredetails">
+              <div>
+                <div *ngIf="currentFlight.withlugg; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock>
+                  <div>
+                    С багажом
+                  </div>
+                </ng-template>
+                <ng-template #elseBlock>
+                  <div>
+                    Без багажа
+                  </div>
+                </ng-template>
+              </div>
+
+              <div>
+                <div *ngIf="currentFlight.travelclass=='econom'; then econom else business"></div>
+                <ng-template #econom>
+                  <div>
+                    Эконом класс
+                  </div>
+                </ng-template>
+                <ng-template #business>
+                  <div>
+                    Бизнес класс
+                  </div>
+                </ng-template>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="price">
+              <img class="priceimg" src="assets/price.png" alt=""> {{currentFlight.totalprice}}₽
+            </div>
+          </td>
+        </tr>
+      </table>
+
+
+      <div class="personal">
+        Личные данные пассажира
+      </div>
+      <div class="personaldata">
+        <div>
+          Фамилия: {{globals.currentUser.lastname}}
+        </div>
+        <div>
+          Имя: {{globals.currentUser.firstname}}
+        </div>
+        <div>
+          Отчество: {{globals.currentUser.middlename}}
+        </div>
+        <div class="space10"></div>
+
+        <div>
+          Email: {{globals.currentUser.email}}
+        </div>
+        <div>
+          Телефон: {{globals.currentUser.phone}}
+        </div>
+      </div>
+      <div class="requisites">Банковская карта</div>
+      <div>
+        <table class="tablecard">
+          <tr>
+            <td>
+              Номер карты
+            </td>
+            <td>
+              <input type="text" placeholder="" [(ngModel)]="cardnumber" maxlength="19"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Владелец
+            </td>
+            <td>
+              <input type="text" placeholder="" [(ngModel)]="cardholder"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Срок действия (mm/yy)
+            </td>
+            <td>
+              <input type="text" placeholder="" [(ngModel)]="carddate" maxlength="5"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              CVV/CVC код
+            </td>
+            <td>
+              <input type="text" placeholder="" [(ngModel)]="cvv" maxlength="3"/>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <button class="btnc" (click)="checkcard()">Оплатить {{currentFlight.totalprice}}₽</button>
+    <div class="message">{{message}}</div>
+  </div>
+
+</div>
+<div class="basement">
+  <app-footer></app-footer>
+</div>

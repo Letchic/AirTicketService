@@ -1,0 +1,138 @@
+
+.wrapper {
+  height: 656px;
+  max-height: 700px;
+  margin-top: 50px;
+}
+
+.leftsection, .rightsection{
+  width: 50%;
+  min-height: 500px;
+  /*background: lightgreen;*/
+  float: left;
+  padding: 20px;
+  color: white;
+}
+.rightsection{
+  padding-right: 50px;
+}
+
+.menu {
+  background-color: #355064;
+  border: 0px ;
+  height: 40px;
+}
+
+button {
+  background-color: #355064;
+  border: 0 ;
+  height: 40px;
+  color: white;
+  text-align: center;
+  font: 14px 'Oswald', sans-serif;
+  outline: none;
+  padding-left: 20px ;
+  padding-right: 20px ;
+}
+button:hover {
+  background-color: #556a7c;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+button:active {
+  background-color: #708191;
+}
+
+.out{
+  float: right;
+}
+
+.head{
+  color: white;
+  font-size: 18pt;
+  text-align: center;
+
+}
+
+.result{
+  color: white;
+  width: 80%;
+  margin-top: 15px;
+  min-height: 30px;
+  border: 1px #708191 solid ;
+}
+
+
+.detl{
+  width: 100px;
+  height: 30px;
+  float: right;
+  margin-left: 15px;
+}
+.det2{
+  height: 30px;
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+
+
+.tablea{
+  width: 100%;
+}
+
+.personal{
+  padding: 5px;
+}
+
+.messages{
+  margin-top: 15px;
+
+  padding: 5px;
+  border: 1px #708191 solid ;
+  background: #355064;
+  overflow: auto;
+  height: 200px;
+}
+
+.applx{
+  margin: 8px;
+}
+
+.data{
+  margin: 8px;
+}
+textarea {
+  width: 720px; /* Ширина поля в процентах */
+  height: 60px; /* Высота поля в пикселах */
+  resize: none; /* Запрещаем изменять размер */
+  background: #355064;
+  color: white;
+  outline: none;
+  border: 1px #708191 solid ;
+}
+
+.area{
+  margin-top: 15px;
+}
+.btnc {
+
+  font-size: 18px;
+  width: 158px;
+  background-color: #FF8C00;
+  border: 0;
+  height: 60px;
+  color: white;
+  border-radius: 3px;
+  outline: none;
+  float: right;
+}
+
+.btnc:hover {
+  background-color: #FFA500;
+}
+
+.btnc:active {
+  background-color: #ffb444;
+}

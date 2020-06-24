@@ -1,0 +1,11 @@
+.footer {
+  background-color: #355064;
+  border: 0px ;
+  height: 40px;
+  text-align: center;
+  color: #dddddd;
+  padding-top: 10px;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  marigin-top:200px;
+}

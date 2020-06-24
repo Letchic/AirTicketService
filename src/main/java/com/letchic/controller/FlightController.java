@@ -26,6 +26,5 @@ public class FlightController {
     public List<Flight> findAll() {
         System.out.println("Findall");
         return flightService.findAll();
-
     }
 }

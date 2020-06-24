@@ -1,0 +1,17 @@
+<app-menu></app-menu>
+<div class="wrapper">
+<div class = login>
+<div >
+  <input   class = 'first' type="text" placeholder = "email:" [(ngModel)] = "email" name="email" />
+</div>
+<div>
+  <input   type="password" placeholder = "password:"   [(ngModel)] = "password" name="password" />
+</div>
+<div >
+  <button  class = 'loginbtn' (click)=login(email,password)>Войти</button>
+</div>
+</div>
+</div>
+<div class="footer">
+  <app-footer></app-footer>
+</div>

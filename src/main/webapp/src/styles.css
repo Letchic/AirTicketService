@@ -1,119 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 body{
   background-color: #2a4050;
   font: 14px 'Oswald', sans-serif;
   margin: 0;
-}
-
-header{
-  color: white;
-}
-
-.search{
-  width: 1000px;
-  margin: auto;
-  margin-top: 80px;
-  margin-bottom: 40px;
-}
-
-button {
-  width: 130px;
-  background-color: #FF8C00;
-  border: 0px ;
-  height: 30px;
-  color: white;
-  padding: 0 10px;
-  margin-left: 15px;
-  border-radius: 3px;
-}
-
-button:hover {
-  background-color: #FFA500;
-}
-
-select{
-  width: 160px;
-  background-color: #355064;
-  background: #355064;
-  border: 1px solid #e7e7e7;
-  height: 30px;
-  color: white;
-  padding: 0 10px;
 
 }
 
 
-select label
-{
-  border-top: 2px solid #ddd;
-  display: none;
-  padding-left: 10px;
-  background: white;
-}
-
-select label:hover
-{
-  background: white;
-  cursor: pointer;
-}
-
-input {
-  width: 160px;
-  background-color: #355064;
-  background: #355064;
-  border: 1px solid #e7e7e7;
-  height: 28px;
-  color: white;
-  padding: 0 10px;
-}
 
 
-::placeholder {
-  color: white;
-}
-
-li {
-  color: white;
-  margin: 5px;
-}
-
-.result{
-  width: 985px;
-  background-color: #355064;
-  background: #355064;
-  border: 1px solid #e7e7e7;
-  height: 28px;
-  color: white;
-  padding: 10px 3px 0 10px;
-  margin-top: 5px;
-}
-
-.resultblock{
-  color: white;
-  width: 980px;
-  margin-top: 50px;
-  width: 1000px;
-  margin: auto;
-
-
-}
-
-.buy{
-  position: relative;
-  bottom: 6px;
-  float: right;
-
-}
-.points{
-  width: 250px;
-  float: left;
-}
-.tdate{
-  width: 250px;
-  float: left;
-  margin-left: 5px;
-}
-
-.app-greetings{
-  margin-top: 50px;
-}

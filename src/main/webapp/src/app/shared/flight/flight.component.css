@@ -1,0 +1,181 @@
+.buy {
+  width: 140px;
+  background-color: #FF8C00;
+  border: 0px;
+  height: 50px;
+  color: white;
+  border-radius: 3px;
+  outline: none;
+  margin-top: 20px;
+  margin-right: 15px;
+  font-size: 16px;
+  text-align: center;
+  float:right;
+  padding: 8px;
+}
+
+.buy:hover {
+  background-color: #FFA500;
+}
+
+.buy:active {
+  background-color: #ffb444;
+}
+
+.result {
+  width: 840px;
+  background-color: #355064;
+  border: 1px solid #e7e7e7;
+  height: 94px;
+  color: white;
+  margin-top: 10px;
+  background: #355064;
+}
+
+
+.timefrom {
+  font-size: 24px;
+  min-width: 150px;
+  text-align: left;
+}
+
+.time {
+  color: #e7e7e7;
+  width: 95px;
+  text-align: center;
+}
+
+.timeto {
+  font-size: 24px;
+  min-width: 150px;
+  text-align: right;
+}
+
+.from {
+  text-align: left;
+  color: #e7e7e7;
+}
+
+.middle {
+  text-align: center;
+  color: #e7e7e7;
+}
+
+.to {
+  text-align: right;
+  color: #e7e7e7;
+}
+
+.datefrom {
+  text-align: left;
+  color: #e7e7e7;
+}
+
+.dateto {
+  text-align: right;
+  color: #e7e7e7;
+}
+
+img{
+  margin: 0 6px 8px;
+}
+
+.point {
+  font-size: 12px;
+  margin-top:5px;
+  margin-left:0px;
+}
+
+.tr2,.tr3 {
+  height: 18px;
+}
+
+.sectionone{
+  float: left;
+  border:0px solid white;
+  height: 91px;
+  width: 420px;
+  margin-top: 0px;
+  margin-left: 8px;
+  padding: 5px;
+}
+.sectiontwo{
+  float: left;
+  border-left:1px solid #e7e7e7;
+  margin-top: 0px;
+  margin-left: 8px;
+  width: 125px;
+  height: 92px;
+
+}
+.active,.nonactive{
+  background-color: #355064;
+  border: 0px ;
+  width: 120px;
+  height: 46px;
+  text-align: center;
+  font: 14px 'Oswald', sans-serif;
+  outline: none;
+  margin: 0px;
+  padding-left: 20px ;
+  padding-right: 20px ;
+  color: #e7e7e7;
+}
+
+.active:active {
+  background-color: #708191;
+}
+.nonactive:active {
+  background-color: #708191;
+}
+.active{
+
+  background-color: #556a7c;
+}
+.nonactive{
+  background-color: #355064;
+
+}
+.tab2{
+  margin-left: 0px;
+  height: 92px;
+}
+
+.tab2td{
+  height: 46px;
+}
+
+.price{
+  font-size: 20px;
+  text-align: center;
+}
+.sectionthree{
+  width: 180px;
+  height: 92px;
+  float: right;
+
+}
+
+.lugg1{
+  margin-left: 6px;
+  width: 80px;
+  margin-top: 17px;
+  font-size: 12px;
+  color: #e7e7e7;
+  text-align: center;
+}
+.lugg2{
+  margin-left: 6px;
+  width: 80px;
+  margin-top: 31px;
+  font-size: 12px;
+  color: #e7e7e7;
+  text-align: center;
+}
+
+
+.sectiontwowithhalf{
+  float: left;
+  width: 90px;
+  height: 94px;
+}

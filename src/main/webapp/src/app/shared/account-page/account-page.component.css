@@ -1,0 +1,149 @@
+.head{
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.head2{
+  font-size: 20px;
+  margin-top:40px;
+}
+
+.personal{
+  font-size: 14px;
+  color: white;
+  margin: 10px 180px;
+  padding: 3px;
+}
+
+
+table{
+  cellpadding: 4px;
+  margin:10px 0;
+}
+
+td{
+  height:22px;
+}
+.properties{
+  width: 150px;
+  color: #e7e7e7;
+}
+.values{
+  width: 500px;
+}
+
+.ticketresult{
+  width: 850px;
+  background: #355064;
+  border: 1px solid #e7e7e7;
+  height: 110px;
+  color: white;
+  padding: 8px 3px 0 8px;
+  margin-top: 10px;
+}
+
+
+.timefrom {
+  font-size: 24px;
+  min-width: 150px;
+  text-align: left;
+}
+
+.time {
+  color: #e7e7e7;
+  width: 95px;
+  text-align: center;
+}
+
+.timeto {
+  font-size: 24px;
+  min-width: 150px;
+  text-align: right;
+}
+
+.from {
+  text-align: left;
+  color: #e7e7e7;
+}
+
+.middle {
+  text-align: center;
+  color: #e7e7e7;
+}
+
+.to {
+  text-align: right;
+  color: #e7e7e7;
+}
+
+.datefrom {
+  text-align: left;
+  color: #e7e7e7;
+}
+
+.dateto {
+  text-align: right;
+  color: #e7e7e7;
+}
+
+img{
+  margin: 0 6px 8px;
+}
+
+.point {
+  float: left;
+  font-size: 12px;
+  margin-top:5px;
+  margin-left:5px;
+
+}
+
+.tr2,.tr3 {
+  height: 18px;
+}
+
+.details{
+  font: 14px 'Oswald', sans-serif;
+  margin-left: 20px;
+  margin-top: 5px;
+  float: left;
+  line-height: 27px;
+  color: #e7e7e7;
+  width: 220px;
+
+}
+
+.buttons{
+  margin-top: 5px;
+  float: right;
+  width: 190px;
+  height: 81px;
+}
+
+button {
+  width: 170px;
+  border: 0;
+  background-color: #708191;
+  height: 25px;
+  border-radius: 3px;
+  padding: 4px 10px;
+  margin: 8px;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  color: #e7e7e7;
+}
+button:hover {
+  background-color: #708191;
+}
+button:active{
+  background-color: #556a7c;
+}
+
+.basement {
+  marigin-top: 200px;
+}
+.wrapper {
+  min-height: 847px;
+  marigin-bottom: 300px;
+  padding-bottom: 60px;
+}

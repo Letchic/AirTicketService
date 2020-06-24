@@ -1,0 +1,22 @@
+<app-menu></app-menu>
+<div class="wrapper">
+  <div class = return>
+
+    <div>
+       Вы можете вернуть билет {{ticket.ticket_id}}. Укажите номер банковской карты для возврата денежных средств.
+    </div>
+    <div >
+      <input   class = 'first' type="text" [(ngModel)] = "number"  />
+    </div>
+    <div >
+      <button  class = 'returnbtn' (click)="cancel()" >Вернуть билет</button>
+    </div>
+    <div >
+      <button  class = 'returnbtn' routerLink="/account-page">Отмена</button>
+    </div>
+
+  </div>
+</div>
+<div class="basement">
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,50 @@
+.menu {
+  background-color: #355064;
+  border: 0px ;
+  height: 40px;
+}
+
+a{
+  font-size: 16px;
+  text-decoration: none;
+  float: right;
+  color: white;
+  margin: 11px 20px;
+}
+.main{
+  float: left;
+}
+
+.rightside{
+  float: right;
+}
+
+.user{
+  font-size: 16px;
+  text-decoration: none;
+  float: right;
+  color: white;
+  margin: 11px 20px;
+}
+
+button {
+  background-color: #355064;
+  border: 0px ;
+  height: 40px;
+  color: white;
+  text-align: center;
+  font: 14px 'Oswald', sans-serif;
+  outline: none;
+  padding-left: 20px ;
+  padding-right: 20px ;
+}
+button:hover {
+  background-color: #556a7c;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+button:active {
+  background-color: #708191;
+}
+
+
+

@@ -1,0 +1,53 @@
+  <div class='result'  *ngFor = "let fl of flights; let i = index">
+    <div class = "sectionone">
+      <table class="point">
+        <tr>
+          <td class = "timefrom"> {{fl.onlytime}}  <img src="assets/takeoff.png" alt=""></td>
+          <td class = "time">В пути: {{fl.time}}</td>
+          <td class = "timeto"> <img src="assets/landing.png" alt=""> {{fl.onlytime2}} </td>
+        </tr>
+        <tr class = "tr2">
+          <td class = "from">{{fl.airport1city}} ({{fl.startingpoint}})</td>
+          <td class = "middle">  {{fl.company}}  </td>
+          <td class = "to">{{fl.airport2city}} ({{fl.destination}})</td>
+        </tr>
+
+        <tr class = "tr3">
+          <td class = "datefrom">{{fl.onlydate}}</td>
+          <td></td>
+          <td class = "dateto"> {{fl.onlydate2}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class = "sectiontwo">
+
+      <div *ngIf="fl.withlugg; then thenBlock else elseBlock" ></div>
+      <ng-template #thenBlock>
+        <div>
+          <button   class="nonactive" (click)="setprice(false, i)  " type=submit>Без багажа</button>
+        </div>
+        <div>
+          <button   class="active"  (click)="setprice(true, i)" type=submit>С багажом</button>
+        </div>
+      </ng-template>
+      <ng-template #elseBlock>
+        <div>
+          <button   class="active"  (click)="setprice(false, i)  " type=submit>Без багажа</button>
+        </div>
+        <div>
+          <button   class="nonactive"  (click)="setprice(true, i)" ng g ctype=submit>С багажом</button>
+        </div>
+
+      </ng-template>
+    </div>
+    <div class = "sectiontwowithhalf">
+      <div class="lugg1">Нет багажа</div>
+      <div class="lugg2">+{{fl.luggageprice}}₽</div>
+    </div>
+
+    <div class = "sectionthree">
+      <button   class="buy" (click)="setFlight(fl.withlugg, i)" type=submit>Купить<br>{{fl.totalprice}}₽</button>
+    </div>
+  </div>
+

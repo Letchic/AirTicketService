@@ -1,0 +1,194 @@
+.mainblock {
+  margin: auto;
+  margin-top: 35px;
+  color: white;
+  width: 460px;
+  height: 728px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+
+.head {
+  font: 26px 'Oswald', sans-serif;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.details {
+  font: 20px 'Oswald', sans-serif;
+  margin-bottom: 8px;
+}
+
+.personal {
+  margin-top: 20px;
+  font: 20px 'Oswald', sans-serif;
+  margin-bottom: 8px;
+}
+
+.space10 {
+  margin-top: 10px;
+}
+
+.requisites {
+  margin-top: 35px;
+  font: 20px 'Oswald', sans-serif;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 220px;
+  background-color: #355064;
+  border: 1px solid #e7e7e7;
+  height: 28px;
+  color: white;
+  padding: 0 10px;
+  outline: none;
+  margin-left: 8px;
+  margin-top: 5px;
+}
+
+input:hover {
+  background-color: #708191;
+}
+
+.tablecard {
+  text-align: right;
+  width: 400px;
+
+}
+
+.btnc {
+  position: relative;
+  font-size: 18px;
+  width: 400px;
+  background-color: #FF8C00;
+  border: 0;
+  height: 40px;
+  color: white;
+  border-radius: 3px;
+  outline: none;
+  margin-top: 20px;
+
+  float: bottom
+}
+
+.btnc:hover {
+  background-color: #FFA500;
+}
+
+.btnc:active {
+  background-color: #ffb444;
+}
+
+
+.timefrom {
+  font-size: 24px;
+  min-width: 150px;
+  text-align: left;
+}
+
+.time {
+  color: #e7e7e7;
+  width: 95px;
+  text-align: center;
+}
+
+.timeto {
+  font-size: 24px;
+  min-width: 150px;
+  text-align: right;
+}
+
+.from {
+  text-align: left;
+  color: #e7e7e7;
+}
+
+.middle {
+  text-align: center;
+  color: #e7e7e7;
+}
+
+.to {
+  text-align: right;
+  color: #e7e7e7;
+}
+
+.datefrom {
+  text-align: left;
+  color: #e7e7e7;
+}
+
+.dateto {
+  text-align: right;
+  color: #e7e7e7;
+}
+
+img {
+  margin: 0 6px 8px;
+}
+
+.point {
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 0px;
+}
+
+.tr2, .tr3 {
+  height: 18px;
+}
+
+.sectionone {
+  float: left;
+  border: 0px solid white;
+  height: 91px;
+  width: 420px;
+  margin-top: 0px;
+  margin-left: 8px;
+  padding: 5px;
+}
+
+.moredetails {
+  margin-top: 10px;
+  color: #e7e7e7;
+}
+
+.price {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #e7e7e7;
+  float: right;
+}
+
+.personaldata {
+  line-height: 22px;
+  margin-top: 2px;
+}
+
+.priceimg {
+  height: 40px;
+  width: 40px;
+}
+
+.basement {
+  marigin-top: 200px;
+}
+
+.wrapper {
+  height: 896px;
+  marigin-bottom: 200px;
+}
+
+.tab {
+  width: 396px;
+}
+
+.message {
+  margin-top: 10px;
+  text-align: center;
+
+}
+
+.data {
+  float: top;
+}

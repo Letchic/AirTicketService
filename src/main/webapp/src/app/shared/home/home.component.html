@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <app-menu></app-menu>
+  <div class="head"><img class = "logo" src="assets/tickets2.png" alt=""><div class = "text">  Поиск авиабилетов</div></div>
+  <div class="search">
+    <form name="search" action="#" method="get">
+      <input list="linput" class="input1"  type="text" placeholder = "Откуда:"  [(ngModel)]= "this.startingpoint" name="startingpoint" />
+      <button class="swap" (click)="swap()" type="submit"><img class = "swapimg" src="assets/swap.png" alt=""></button>
+      <input list="linput" id="input2" type="text" placeholder = "Куда:" [(ngModel)]= "this.destination" name="destination"/>
+      <input class="date" type="date" placeholder = "Дата вылета:" [(ngModel)]= "this.departuretime" name="departuretime"/>
+      <select id="tclass" type="text"  [(ngModel)]= "tclass" name="tclass">
+        <option  value="econom">Эконом</option>
+        <option  value="business">Бизнес</option>
+      </select>
+
+      <button class="find" (click)="find()" type="submit">
+          Найти
+      </button>
+
+      <datalist id="linput">
+        <option>Москва</option>
+        <option>Санкт-Петербург</option>
+        <option>Нижний Новгород</option>
+        <option>Рим</option>
+        <option>Берлин</option>
+        <option>Токио</option>
+        <option>Лондон</option>
+      </datalist>
+    </form>
+  </div>
+
+
+    <div *ngIf="this.nonecity">
+      <div class="oops2">
+        Укажите направление перелета!
+      </div>
+    </div>
+  <div *ngIf="this.nonedata">
+    <div class="oops2">
+      Укажите дату перелета!
+    </div>
+  </div>
+
+  <div>
+    <div *ngIf="this.search && flights.length == 0; then result else ooops"></div>
+    <ng-template #result>
+      <div class="oops">
+      К сожалению на выбранную дату и направление нет запланированных рейсов...
+  </div>
+    </ng-template>
+    <ng-template #ooops>
+      <div class="resultblock">
+        <app-flight [flights]="flights"></app-flight>
+      </div>
+    </ng-template>
+  </div>
+</div>
+<div class="footer"><app-footer></app-footer></div>
+

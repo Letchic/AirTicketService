@@ -1,0 +1,107 @@
+<app-menu></app-menu>
+<div class="wrapper">
+<div class = register>
+    <table >
+        <tr>
+          <td>
+            Email:
+          </td>
+          <td>
+            <input  type="text" [(ngModel)]="email" name="email"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Пароль:
+          </td>
+          <td>
+            <input type="password"  [(ngModel)]="password" name="password"/>
+          </td>
+        </tr>
+      <tr>
+        <td>
+          Фамилия:
+        </td>
+        <td>
+          <input type="text"  [(ngModel)]="lastname" name="lastname"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Имя:
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="firstname" name="firstname"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Отчество:
+        </td>
+        <td>
+          <input type="text"  [(ngModel)]="middlename" name="middlename"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Пол:
+        </td>
+        <td>
+          <select type="text"  [(ngModel)]= "gender" name="gender" >
+            <option  value ="Мужской">Мужской</option>
+            <option  value ="Женский">Женский</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Национальность:
+        </td>
+        <td>
+          <input type="text"  [(ngModel)]= "nationality" name="nationality" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Место рождения:
+        </td>
+        <td>
+          <input  type="text"   [(ngModel)]= "placeofbirth" name="placeofbirth" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Дата рождения:
+        </td>
+        <td>
+          <input type="date"   [(ngModel)]= "dateofbirth" name="dateofbirth" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Телефон:
+        </td>
+        <td>
+          <input type="text"  [(ngModel)]= "phone" name="phone" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Паспорт:
+        </td>
+        <td>
+          <input type="text"   [(ngModel)]= "passport" name="passport" />
+        </td>
+      </tr>
+    </table>
+
+
+  <div >
+    <button (click) = "register(email, password, firstname, lastname, middlename, gender, nationality, placeofbirth, dateofbirth, phone, passport)" class = 'loginbtn'>Регистрация</button>
+  </div>
+    <label class="attention">{{check}}</label>
+  </div>
+</div>
+<div class="basement">
+  <app-footer></app-footer>
+</div>

@@ -1,33 +1,1 @@
-package com.letchic.model;
-
-import javax.persistence.*;
-
-    @Entity
-    @Table(name = "ticket")
-    public class Ticket {
-
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private long ticket_id;
-
-        private long passenger_id;
-        private long flight_id;
-        private String travelclass;
-        private String seat;
-        private String status;
-        private String reservationdate;
-        private boolean nationality;
-
-        public Ticket() {
-        }
-
-        public Ticket(long passenger_id, long flight_id, String travelclass, String seat, String status, String reservationdate, boolean nationality) {
-            this.passenger_id = passenger_id;
-            this.flight_id = flight_id;
-            this.travelclass = travelclass;
-            this.seat = seat;
-            this.status = status;
-            this.reservationdate = reservationdate;
-            this.nationality = nationality;
-        }
-    }
+package com.letchic.model;import javax.persistence.*;@Entity@Table(name = "ticket")public class Ticket {    @Id    @GeneratedValue(strategy = GenerationType.IDENTITY)    private long ticket_id;    private long passenger_id;    private long flight_id;    private String travelclass;    private String seat;    private String status;    private String reservationdate;    private boolean isextraluggage;    @Override    public String toString() {        return "Ticket{" +                "ticket_id=" + ticket_id +                ", passenger_id=" + passenger_id +                ", flight_id=" + flight_id +                ", travelclass='" + travelclass + '\'' +                ", seat='" + seat + '\'' +                ", status='" + status + '\'' +                ", reservationdate='" + reservationdate + '\'' +                ", isextraluggage=" + isextraluggage +                '}';    }    public void setTicket_id(long ticket_id) {        this.ticket_id = ticket_id;    }    public void setPassenger_id(long passenger_id) {        this.passenger_id = passenger_id;    }    public void setFlight_id(long flight_id) {        this.flight_id = flight_id;    }    public void setTravelclass(String travelclass) {        this.travelclass = travelclass;    }    public void setSeat(String seat) {        this.seat = seat;    }    public void setStatus(String status) {        this.status = status;    }    public void setReservationdate(String reservationdate) {        this.reservationdate = reservationdate;    }    public void setIsextraluggage(boolean isextraluggage) {        this.isextraluggage = isextraluggage;    }    public long getTicket_id() {        return ticket_id;    }    public long getPassenger_id() {        return passenger_id;    }    public long getFlight_id() {        return flight_id;    }    public String getTravelclass() {        return travelclass;    }    public String getSeat() {        return seat;    }    public String getStatus() {        return status;    }    public String getReservationdate() {        return reservationdate;    }    public boolean isIsextraluggage() {        return isextraluggage;    }}
