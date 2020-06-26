@@ -21,4 +21,13 @@ export class MenuComponent implements OnInit {
     localStorage.removeItem('currentUser');
     this.globals.currentUser = null;
   }
+
+  sendmessage() {
+    const currentdate = new Date();
+    const senddate = String(currentdate.getUTCDate()).padStart(2, '0') + '-' + String((currentdate.getMonth() + 1)).padStart(2, '0')
+      + '-' + currentdate.getFullYear() + ' '
+      + String(currentdate.getHours()).padStart(2, '0') + ':'
+      + String(currentdate.getMinutes()).padStart(2, '0');
+    console.log(senddate);
+  }
 }

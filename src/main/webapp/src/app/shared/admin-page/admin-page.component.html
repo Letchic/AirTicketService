@@ -1,32 +1,24 @@
 <div class="menu">
   <button class="out" routerLink="" type=submit>
-    Выйти из режима администратора
+    Выйти
   </button>
 </div>
 <div class="wrapper">
   <div class="leftsection">
-    <div class="head">
-      Пользователи
+    <div class="headleft">
+      Обращения
     </div>
     <div class='result' *ngFor="let user of users; let i = index">
       <table class="tablea">
         <tr>
           <td>
-            <button class="det2" (click)="expand(i)">{{user.lastname}} {{user.firstname}} {{user.middlename}}</button>
+            <div class="fio">{{user.lastname}} {{user.firstname}} {{user.middlename}}</div>
           </td>
           <td>
-            <button class="detl" (click)="read(i)">Чат</button>
+            <button class="detl" (click)="read(i)">Подробнее</button>
           </td>
         </tr>
       </table>
-      <div *ngIf="user.expand">
-        <div class="personal">
-          <div class="data"> Номер пользователя: {{user.passenger_id}}</div>
-          <div class="data"> Телефон: {{user.phone}}</div>
-          <div class="data"> Email: {{user.email}}</div>
-        </div>
-      </div>
-
     </div>
   </div>
   <div class="rightsection">
@@ -34,19 +26,51 @@
       <div class="head">
         Чат
       </div>
-
-
-      <div class="messages" >
-        <div *ngFor="let appl of users[k].appeals; let i = index">
-          <div class="applx">
-            {{appl.date}} {{appl.message}}
-          </div>
+      <div class="messages">
+        <div *ngFor="let mess of users[k].messages; let i = index">
+          <div class="leftsidechat" *ngIf="mess.useridfrom.toString() !== '700000000'; then left else right"></div>
+          <ng-template #left>
+            <div class="leftsidechat">
+              <table class="chattable">
+                <tr>
+                  <td class="firstcolumn">
+                    <div class="date"> {{mess.date.toString().substr(0, 10)}}</div>
+                    <div class="time"> {{mess.date.toString().substr(10)}}</div>
+                  </td>
+                  <td class="secondcolumn">
+                    <div class="text"> {{mess.message}}</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </ng-template>
+          <ng-template #right>
+            <div class="rightchat">
+              <table class="chattabler">
+                <tr>
+                  <td class="secondcolumn">
+                    <div class="text"> {{mess.message}}</div>
+                  </td>
+                  <td class="firstcolumn">
+                    <div class="date"> {{mess.date.toString().substr(0, 10)}}</div>
+                    <div class="time"> {{mess.date.toString().substr(10)}}</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </ng-template>
         </div>
       </div>
       <div class="area">
         <textarea type="text" [(ngModel)]="message">
         </textarea>
-        <button class="btnc" >Отправить</button>
+        <button class="btnc" (click)="sendmessage()">Отправить</button>
+      </div>
+      <div class="personal">
+        <div class="data">Пользователь: {{users[k].lastname}} {{users[k].firstname}} {{users[k].middlename}}</div>
+        <div class="data">Номер пользователя: {{users[k].passenger_id}}</div>
+        <div class="data">Телефон: {{users[k].phone}}</div>
+        <div class="data">Email: {{users[k].email}}</div>
       </div>
     </div>
   </div>

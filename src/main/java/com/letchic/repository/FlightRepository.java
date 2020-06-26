@@ -23,12 +23,14 @@ public interface FlightRepository extends JpaRepository<Flight, Integer> {
             "WHERE city = :epoint    \n" +
             ")  \n" +
             "SELECT flightid, startingpoint, destination, luggageprice, departuretime, arrivaltime, gate, company,\n" +
-            "travelclass,emptyseats,price, \n" +
+            "travelclass, price, \n" +
             "airport1.airportname AS airport1name, airport1.city AS airport1city, \n" +
             "airport2.airportname AS airport2name, airport2.city AS airport2city\n" +
             "FROM flightId f JOIN travelclass t ON f.flightid = t.idflight AND t.travelclass=:travelclass\n" +
             "JOIN  airports as airport1 ON airport1.code = startingpoint\n" +
-            "JOIN  airports as airport2 ON airport2.code = destination";
+            "JOIN  airports as airport2 ON airport2.code = destination\n" +
+            "WHERE flightid IN (SELECT DISTINCT flight_id FROM ticket tc\n" +
+            "WHERE tc.status = 'free' AND tc.travelclass = :travelclass) ";
 
     @Query(value = queryGetFlightId, nativeQuery = true)
     List<FlightView> findByDeparturetimeAndPoints(@Param("date") Date date,

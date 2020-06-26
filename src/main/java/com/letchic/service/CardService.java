@@ -2,7 +2,6 @@ package com.letchic.service;
 
 import com.letchic.model.Card;
 import com.letchic.repository.CardRepository;
-import com.letchic.repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

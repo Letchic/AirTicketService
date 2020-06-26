@@ -21,6 +21,10 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
+    public List<User> getUserWithMessage() {
+            return userRepository.getUserWithMessage();
+    }
+
     public List<User> findAll() {
         return userRepository.findAll();
     }

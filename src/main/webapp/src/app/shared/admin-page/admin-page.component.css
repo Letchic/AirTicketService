@@ -1,14 +1,11 @@
-
 .wrapper {
-  height: 656px;
-  max-height: 700px;
+  min-height: 806px;
   margin-top: 50px;
 }
 
 .leftsection, .rightsection{
   width: 50%;
   min-height: 500px;
-  /*background: lightgreen;*/
   float: left;
   padding: 20px;
   color: white;
@@ -19,7 +16,7 @@
 
 .menu {
   background-color: #355064;
-  border: 0px ;
+  border: 0;
   height: 40px;
 }
 
@@ -46,10 +43,14 @@ button:active {
   float: right;
 }
 
-.head{
+.head, .headleft{
   color: white;
   font-size: 18pt;
   text-align: center;
+}
+.headleft{
+  text-align: left;
+  margin-left: 34%;
 
 }
 
@@ -60,7 +61,6 @@ button:active {
   min-height: 30px;
   border: 1px #708191 solid ;
 }
-
 
 .detl{
   width: 100px;
@@ -75,58 +75,44 @@ button:active {
   padding-right: 10px;
 }
 
-
-
-
 .tablea{
   width: 100%;
+
 }
 
 .personal{
   padding: 5px;
 }
 
-.messages{
-  margin-top: 15px;
-
-  padding: 5px;
-  border: 1px #708191 solid ;
-  background: #355064;
-  overflow: auto;
-  height: 200px;
-}
-
-.applx{
-  margin: 8px;
-}
-
 .data{
   margin: 8px;
 }
+
 textarea {
-  width: 720px; /* Ширина поля в процентах */
-  height: 60px; /* Высота поля в пикселах */
-  resize: none; /* Запрещаем изменять размер */
+  width: 715px;
+  height: 60px;
+  resize: none;
   background: #355064;
   color: white;
   outline: none;
   border: 1px #708191 solid ;
+  padding: 8px;
+  border-radius: 5px;
 }
 
 .area{
   margin-top: 15px;
 }
 .btnc {
-
   font-size: 18px;
   width: 158px;
   background-color: #FF8C00;
   border: 0;
   height: 60px;
   color: white;
-  border-radius: 3px;
   outline: none;
   float: right;
+  border-radius: 5px;
 }
 
 .btnc:hover {
@@ -135,4 +121,57 @@ textarea {
 
 .btnc:active {
   background-color: #ffb444;
+}
+
+.fio{
+  margin-left: 10px;
+ }
+
+.messages{
+  margin-top: 15px;
+  border: 1px #708191 solid ;
+  background: #355064;
+  overflow: auto;
+  height: 300px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.leftsidechat{
+  margin-top: 5px;
+  width: 100%;
+}
+.rightchat{
+  text-align: right;
+  float: right;
+  width: 100%;
+}
+
+.firstcolumn{
+  width: 76px;
+  vertical-align: top;
+}
+.secondcolumn{
+  vertical-align: top;
+}
+
+.date, .time{
+  margin: 5px;
+  font-size: 9pt;
+  color: #e7e7e7;
+}
+
+.text {
+  padding: 10px;
+  border-radius: 5px;
+  background: #708191;
+  min-height: 36px;
+  margin: 0 10px;
+  max-width: 600px;
+  text-align: left;
+  line-height: 18px;
+}
+
+.chattabler{
+  float: right;
 }

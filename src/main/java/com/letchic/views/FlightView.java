@@ -1,6 +1,5 @@
 package com.letchic.views;
 
-import java.sql.Time;
 import java.util.Date;
 
 public interface FlightView {
@@ -13,8 +12,6 @@ public interface FlightView {
     double getPrice();
 
     double getLuggageprice();
-
-    int getEmptyseats();
 
     Date getDeparturetime();
 

@@ -25,12 +25,8 @@ export class FlightComponent implements OnInit {
     if (!this.globals.currentUser) {
       document.location.href = '/login-page';
     } else {
-      this.chekticket(i);
+      this.chekticket(isextraluggage, i);
     }
-    localStorage.removeItem('currentFlight');
-    this.flights[i].withlugg = isextraluggage;
-    this.flights[i].travelclass = this.globals.tclass;
-    localStorage.setItem('currentFlight', JSON.stringify(this.flights[i]));
   }
 
   setprice(withlugg, i) {
@@ -43,7 +39,7 @@ export class FlightComponent implements OnInit {
     }
   }
 
-   chekticket(i) {
+   chekticket(isextraluggage, i) {
     this.http.get<Response>('http://localhost:8090/ticket/checkticket?flightid='
       + this.flights[i].flightid + '&userid=' + this.globals.currentUser.passenger_id).subscribe(result => {
       console.log('check ticket');
@@ -52,6 +48,10 @@ export class FlightComponent implements OnInit {
         document.location.href = '/app-alreadybuyed';
       }
       if ( result.status === 200){
+        localStorage.removeItem('currentFlight');
+        this.flights[i].withlugg = isextraluggage;
+        this.flights[i].travelclass = this.globals.tclass;
+        localStorage.setItem('currentFlight', JSON.stringify(this.flights[i]));
         document.location.href = '/parchase-page';
       }
     });

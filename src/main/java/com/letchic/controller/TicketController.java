@@ -8,7 +8,6 @@ import com.letchic.service.EmailService;
 import com.letchic.service.FlightService;
 import com.letchic.service.TicketService;
 import com.letchic.views.TicketView;
-import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -29,10 +28,7 @@ public class TicketController {
     @PostMapping("/buy")
     @ResponseStatus(value = HttpStatus.OK, reason = "Successful ticket")
     public void updateTickets(@RequestBody Ticket ticket) {
-        System.out.println(ticket.getFlight_id());
-        System.out.println(ticket.getPassenger_id());
         long ticket_id = ticketService.findFreeTicketID(ticket.getFlight_id(), ticket.getTravelclass());
-        System.out.println(ticket_id);
         ticketService.updateTicket(ticket_id, ticket.getPassenger_id(), ticket.isIsextraluggage(), ticket.getReservationdate());
     }
 
@@ -44,29 +40,22 @@ public class TicketController {
     @GetMapping("/checkticket")
     @ResponseStatus(value = HttpStatus.OK, reason = "Successful ticket")
     public void checkTicket(@RequestParam long flightid, long userid) throws AlreadyAddedException {
-        if (ticketService.checkTicket(flightid, userid) != null) {
-            System.out.println("found");
-            throw new AlreadyAddedException();
-        } else {
-            System.out.println("notfound");
-        }
+        if (ticketService.checkTicket(flightid, userid) != null) throw new AlreadyAddedException();
     }
 
 
     @PostMapping("/createtickets")
     @ResponseStatus(value = HttpStatus.OK, reason = "Successful ticket")
-    public void createTickets() throws JSONException {
+    public void createTickets() {
         List<Flight> flightList = flightService.findAll();
         for (Flight f : flightList) {
             ticketService.callAddTicket(f.getFlightid());
-            System.out.println(f.getFlightid());
         }
     }
 
     @PostMapping("/cancel")
     @ResponseStatus(value = HttpStatus.OK, reason = "Successful ticket")
     public void cancel(@RequestBody Ticket ticket) {
-        System.out.println("cancel" + ticket.getTicket_id());
         ticketService.cancelTicket(ticket.getTicket_id());
     }
 

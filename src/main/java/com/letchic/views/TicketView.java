@@ -28,4 +28,6 @@ public interface TicketView {
     String getAirport2city();
 
     String getCompany();
+
+    String getSeat();
 }

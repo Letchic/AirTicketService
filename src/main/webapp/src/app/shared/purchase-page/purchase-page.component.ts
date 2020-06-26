@@ -102,6 +102,7 @@ export class PurchasePageComponent implements OnInit {
       reservationdate
     }).subscribe(result => {
       document.location.href = '/account-page';
+      localStorage.removeItem('currentFlight');
     });
   }
 }

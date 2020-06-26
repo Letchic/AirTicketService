@@ -71,6 +71,7 @@
     <div class = "details">
       <div>Номер рейса: {{ticket.flightid}}</div>
       <div>Номер билета: {{ticket.ticket_id}}</div>
+      <div>Место: {{ticket.seat}}</div>
       <div>
         <div *ngIf="ticket.travelclass=='econom'; then econom else business"></div>
         <ng-template #econom>

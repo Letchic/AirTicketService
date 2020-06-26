@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Globals} from '../Globals';
-import {Flight, Ticket, User} from '../interfaces';
+import {Ticket} from '../interfaces';
 import {HttpClient} from '@angular/common/http';
 
 @Component({
@@ -68,7 +68,8 @@ export class AccountPageComponent implements OnInit {
       'Дата и время вылета: ' + this.tickets[i].onlydate + ' ' + this.tickets[i].onlytime + '\n' +
       'Посадка: ' + this.tickets[i].airport2city + ' (' + this.tickets[i].destination + ') \n' +
       'Дата и время посадки: ' + this.tickets[i].onlydate2 + ' ' + this.tickets[i].onlytime2 + '\n' +
-      'Класс: ' + (this.tickets[i].travelclass === 'econom' ? 'эконом' : 'бизнес');
+      'Класс: ' + (this.tickets[i].travelclass === 'econom' ? 'эконом' : 'бизнес') + '\n' +
+      'Место: ' + this.tickets[i].seat;
     const email = this.globals.currentUser.email;
 
     return this.http.post('http://localhost:8090/ticket/send', {text, email}).subscribe(result => {

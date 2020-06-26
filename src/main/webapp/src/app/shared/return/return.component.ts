@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Globals} from '../Globals';
 import {HttpClient} from '@angular/common/http';
 import {Ticket} from '../interfaces';
 
@@ -20,9 +19,10 @@ export class ReturnComponent implements OnInit {
     this.ticket = JSON.parse(localStorage.getItem('returnticket'));
   }
 
-  cancel() {
+  return() {
     this.http.post<Response>('http://localhost:8090/ticket/cancel', this.ticket).subscribe(result => {
       document.location.href = '/account-page';
+      localStorage.removeItem('returnticket');
     });
   }
 }

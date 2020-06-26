@@ -20,6 +20,7 @@ export interface Flight {
   totalprice: number;
   withlugg: boolean;
 }
+
 export class User {
   // tslint:disable-next-line:variable-name
   passenger_id: string;
@@ -34,9 +35,9 @@ export class User {
   dateofbirth: string;
   phone: string;
   passport: string;
-  appeals: Appeal[];
+  messages: ChatMessage[];
   expand: boolean;
-  public userid: string;
+  fio: string;
 }
 
 export interface Response {
@@ -61,24 +62,31 @@ export interface Ticket {
   onlydate2: string;
   onlytime2: string;
   travelclass: string;
+  seat: string;
 }
 
-export interface Card
-{
+export interface Card {
   cardnumber: string;
   cardholder: string;
   carddate: string;
   cvv: string;
 }
 
-export interface Appeal{
-  appealid: string ;
-  userid: string ;
-  message: string ;
-  date: string ;
-  firstname: string;
-  lastname: string;
-  middlename: string;
-  phone: string;
-  email: string;
+export class ChatMessage {
+  messageid: string;
+  useridfrom: string;
+  useridto: string;
+  message: string;
+  date: string;
+  userfiofrom: string;
+  userfioto: string;
+
+  constructor(useridfrom: string, useridto: string,
+              message: string, date: string) {
+    this.useridfrom = useridfrom;
+    this.useridto = useridto;
+    this.message = message;
+    this.date = date;
+  }
+
 }

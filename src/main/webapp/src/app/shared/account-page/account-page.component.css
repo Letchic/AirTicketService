@@ -103,11 +103,11 @@ img{
 }
 
 .details{
-  font: 14px 'Oswald', sans-serif;
+  font: 12px 'Oswald', sans-serif;
   margin-left: 20px;
-  margin-top: 5px;
+  margin-top: 8px;
   float: left;
-  line-height: 27px;
+  line-height: 19px;
   color: #e7e7e7;
   width: 220px;
 

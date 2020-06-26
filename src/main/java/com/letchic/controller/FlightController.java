@@ -24,7 +24,6 @@ public class FlightController {
 
     @GetMapping("/findall")
     public List<Flight> findAll() {
-        System.out.println("Findall");
         return flightService.findAll();
     }
 }

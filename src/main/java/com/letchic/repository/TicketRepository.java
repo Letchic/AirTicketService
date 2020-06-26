@@ -25,7 +25,7 @@ public interface TicketRepository extends JpaRepository<Ticket, Integer> {
 
 
     String queryGetTicket = "SELECT ticket_id, flightid, startingpoint, destination, departuretime, arrivaltime, gate,\n" +
-            "travelclass, company,\n" +
+            "travelclass, company, seat,\n" +
             "a1.airportname AS airport1name, a1.city AS airport1city, \n" +
             "a2.airportname AS airport2name, a2.city AS airport2city \n" +
             "FROM flight f \n" +

@@ -6,7 +6,6 @@ import com.letchic.views.TicketView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
 import java.util.List;
 
 @Service
@@ -19,7 +18,6 @@ public class TicketService {
     }
 
     public List<TicketView> findTicket(long passenger_id) {
-        System.out.println(passenger_id);
         return ticketRepository.findByPassenger_id(passenger_id);
     }
 

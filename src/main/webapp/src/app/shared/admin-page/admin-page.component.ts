@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Appeal, User} from '../interfaces';
+import {Component, OnInit} from '@angular/core';
+import {ChatMessage, User} from '../interfaces';
 import {HttpClient} from '@angular/common/http';
-import set = Reflect.set;
+
 
 @Component({
   selector: 'app-admin-page',
@@ -10,14 +10,13 @@ import set = Reflect.set;
 })
 export class AdminPageComponent implements OnInit {
 
-  appeals: Appeal[] = [];
-  idusers: string [] = [];
   users: User [] = [];
   k: number;
   message: string;
+  chatmessage: ChatMessage;
 
   constructor(private http: HttpClient) {
-    this.findAllAppeal();
+    this.finduser();
     this.k = -1;
   }
 
@@ -25,54 +24,52 @@ export class AdminPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  findAllAppeal() {
-    this.appeals.length = 0;
-    this.http.get<Appeal[]>('http://localhost:8090/appeal/findall').subscribe(result => {
-      for (const appeal of result) {
-        this.appeals.push(appeal);
-        this.idusers.push(appeal.userid);
+  finduser() {
+    this.http.get<User[]>('http://localhost:8090/user/finduserwithmessage').subscribe(result => {
+      for (const user of result) {
+        if ('700000000' !== user.passenger_id) {
+          console.log(user);
+          this.users.push(user);
+        }
       }
-      this.finduser();
     });
   }
 
-  finduser() {
-    let arr = new Array();
-    let user;
-    const idset = new Set(this.idusers);
-    for (const userid of idset) {
-    }
-    this.idusers = [];
-    this.idusers = Array.from(idset);
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < this.idusers.length; i++) {
-      console.log(this.idusers[i]);
-      user =  new User();
-      user.passenger_id = this.idusers[i];
-      this.users[i] = user;
-      this.users[i].expand = false;
-      for (const appeal of this.appeals) {
-        if (appeal.userid === this.users[i].passenger_id) {
-          if (!this.users[i].firstname){
-            this.users[i].firstname = appeal.firstname;
-            this.users[i].lastname = appeal.lastname;
-            this.users[i].middlename = appeal.middlename;
-            this.users[i].phone = appeal.phone;
-            this.users[i].email = appeal.email;
-          }
-          arr.push(appeal);
-        }
-        this.users[i].appeals = arr;
+  sendmessage() {
+    const currentdate = new Date();
+    const senddate = String(currentdate.getUTCDate()).padStart(2, '0') + '-' + String((currentdate.getMonth() + 1)).padStart(2, '0')
+      + '-' + currentdate.getFullYear() + ' '
+      + String(currentdate.getHours()).padStart(2, '0') + ':'
+      + String(currentdate.getMinutes()).padStart(2, '0');
+
+    this.chatmessage = new ChatMessage('700000000',
+      this.users[this.k].passenger_id,
+      this.message,
+      senddate);
+    console.log(this.chatmessage);
+    return this.http.post('http://localhost:8090/chatmessage/create', this.chatmessage).subscribe(result => {
+     this.message = '';
+     this.findmessage();
+    });
+  }
+
+  findmessage() {
+    this.users[this.k].messages = [];
+    this.http.get<ChatMessage[]>('http://localhost:8090/chatmessage/findamessages?userid=' + this.users[this.k].passenger_id)
+      .subscribe(result => {
+      for (const message of result) {
+        this.users[this.k].messages.push(message);
       }
-      arr = [];
-    }
+    });
   }
 
   expand(i) {
     this.users[i].expand = !this.users[i].expand;
   }
+
   read(i) {
     this.k = i;
+    this.findmessage();
   }
 }
 

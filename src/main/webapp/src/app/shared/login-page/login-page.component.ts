@@ -24,23 +24,19 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   login(email, password) {
-    if (email === 'admin' && password === 'admin' ) {
-        document.location.href = '/admin-page';
-        console.log('after');
-        return;
-    }
-
     return this.http.post<User>('http://localhost:8090/user/auth/login', {email, password}).subscribe(result => {
-      this.user = result;
-      this.globals.currentUser = this.user;
-      localStorage.setItem('currentUser', JSON.stringify(this.user));
-      document.location.href = '';
+      console.log(result);
+      if (result) {
+        this.user = result;
+        if (this.user.passenger_id.toString() === '700000000') {
+          document.location.href = '/admin-page';
+          return;
+        }
+        this.globals.currentUser = this.user;
+        localStorage.setItem('currentUser', JSON.stringify(this.user));
+        document.location.href = '';
+      }
     });
-  }
-
-  log(emailpassword) {
-    console.log('You email password ' + emailpassword);
   }
 }

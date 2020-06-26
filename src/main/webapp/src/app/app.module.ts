@@ -18,6 +18,7 @@ import { ReturnComponent } from './shared/return/return.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminPageComponent } from './shared/admin-page/admin-page.component';
 import { AlreadybuyedComponent } from './shared/alreadybuyed/alreadybuyed.component';
+import { SupportchatPageComponent } from './shared/supportchat-page/supportchat-page.component';
 
 
 
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
   {path: 'app-return', component: ReturnComponent},
   {path: 'admin-page', component: AdminPageComponent},
   {path: 'app-alreadybuyed', component: AlreadybuyedComponent},
+  {path: 'support-page', component: SupportchatPageComponent},
 ]
 
 @NgModule({
@@ -46,6 +48,7 @@ const appRoutes: Routes = [
     ReturnComponent,
     AdminPageComponent,
     AlreadybuyedComponent,
+    SupportchatPageComponent,
   ],
   imports: [
     BrowserModule,

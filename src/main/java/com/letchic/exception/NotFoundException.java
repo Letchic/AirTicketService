@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(code = HttpStatus.NO_CONTENT)
 public class NotFoundException extends Exception {
     public String toString() {
-        return ("Card not found");
+        return ("Not found");
     }
 }
